@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "750570975419",
+    "project_id": "sakay-na-app",
+    "storage_bucket": "sakay-na-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:750570975419:android:e8fc37a29a0f974612799e",
+        "android_client_info": {
+          "package_name": "com.olympustech.sakayna"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "750570975419-fagjjgnt73mmeoc7u953odbmhb7ooirf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAobW-OjHVGQhzxPBtOzk9O27BachyCee4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "750570975419-fagjjgnt73mmeoc7u953odbmhb7ooirf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
