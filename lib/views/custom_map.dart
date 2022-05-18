@@ -52,17 +52,15 @@ class CustomMap extends StatelessWidget {
               position:
                   LatLng(currentPosition!.latitude, currentPosition!.longitude),
             ),
-            if (!isDriver) ...{
-              Marker(
-                infoWindow: const InfoWindow(
-                  title: "Driver Location",
-                ),
-                markerId: const MarkerId("driver"),
-                position: driverLoc,
-                icon: BitmapDescriptor.defaultMarkerWithHue(
-                    BitmapDescriptor.hueRose),
+            Marker(
+              infoWindow: const InfoWindow(
+                title: "Driver Location",
               ),
-            },
+              markerId: const MarkerId("driver"),
+              position: driverLoc,
+              icon: BitmapDescriptor.defaultMarkerWithHue(
+                  BitmapDescriptor.hueRose),
+            ),
             Marker(
               markerId: const MarkerId("destination"),
               infoWindow: const InfoWindow(

@@ -162,8 +162,11 @@ class _DriverInfoState extends State<DriverInfo> {
                                 height: 50,
                                 child: ElevatedButton(
                                   onPressed: () {
+                                    print(
+                                        "DESTINATION : ${widget.destination.coordinate}, ${widget.destination.locationName}");
+                                    print("DRIVING ID: ${widget.driverId}");
                                     Navigator.of(context).pop(null);
-                                    Navigator.of(context).pop(null);
+                                    // Navigator.of(context).pop(null);
                                     Navigator.pushNamed(
                                         context, "/book_driver_page",
                                         arguments: [

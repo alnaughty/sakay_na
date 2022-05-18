@@ -119,6 +119,7 @@ class _LandingPageState extends State<LandingPage> {
               } else {
                 for (var doc in dd.docs) {
                   if (doc.get('id') != loggedUser!.id) {
+                    print("ACCOUNT TYPE: ${loggedUser!.accountType}");
                     FirebaseFirestore.instance
                         .collection('account_geo_loc')
                         .add({
@@ -128,7 +129,7 @@ class _LandingPageState extends State<LandingPage> {
                       "latitude": pos.latitude,
                       "account_type": loggedUser!.accountType == null
                           ? 1
-                          : int.parse(loggedUser!.accountType!),
+                          : int.parse(loggedUser!.accountType ?? "0"),
                       "longitude": pos.longitude,
                     });
                   }

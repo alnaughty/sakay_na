@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:sakayna/global/app.dart';
 import 'package:sakayna/models/destination_model.dart';
 import 'package:sakayna/models/firebase_account_info_model.dart';
@@ -33,13 +34,17 @@ class _NearestDriverListPageState extends State<NearestDriverListPage> {
           if (snapshot.hasData && !snapshot.hasError) {
             final List<FirestoreAccountInfoModel> _nearestDrivers =
                 snapshot.data!
-                    .where((element) =>
-                        element.id != loggedUser!.id &&
-                        calculateDistanceHaversine(
-                              src: widget.destination.coordinate,
-                              tar: element.location,
-                            ) <=
-                            2)
+                    .where(
+                      (element) =>
+                          element.id != loggedUser!.id &&
+                          calculateDistanceHaversine(
+                                src: LatLng(currentPosition!.latitude,
+                                    currentPosition!.longitude),
+                                tar: element.location,
+                              ) <=
+                              2 &&
+                          element.accountType == 0,
+                    )
                     .toList();
             if (_nearestDrivers.isEmpty) {
               return const Center(

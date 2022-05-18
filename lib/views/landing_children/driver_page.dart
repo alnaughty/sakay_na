@@ -125,7 +125,40 @@ class _DriverPageState extends State<DriverPage> {
                       height: 10,
                     ),
                     Text(
-                      "Destination:",
+                      "Total Fare : ₱${snapshot.data!.fare}",
+                      style: TextStyle(
+                        color: Colors.grey.shade900,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    RichText(
+                      text: TextSpan(
+                          text: "Total Distance : ${snapshot.data!.distance}",
+                          style: TextStyle(
+                            color: Colors.grey.shade900,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          children: [
+                            TextSpan(
+                              text: " KM",
+                              style: TextStyle(
+                                color: Palette.kToDark.shade300,
+                              ),
+                            )
+                          ]),
+                    ),
+                    // Text(
+                    //   "Total Distance : ${snapshot.data!.distance} KM",
+                    //   style: TextStyle(
+                    //     color: Colors.grey.shade900,
+                    //     fontSize: 15,
+                    //     fontWeight: FontWeight.w500,
+                    //   ),
+                    // ),
+                    Text(
+                      "Destination :",
                       style: TextStyle(
                         color: Colors.grey.shade900,
                         fontSize: 15,

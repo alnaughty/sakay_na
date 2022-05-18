@@ -96,4 +96,25 @@ class AuthAPI {
       return null;
     }
   }
+
+  Future<void> logout() async {
+    try {
+      Map body = {};
+      if (fcmToken != null) {
+        body.addAll({"token": fcmToken});
+      }
+      await http.post(
+        Uri.parse("${Network.apiHost}/logout"),
+        headers: {
+          "accept": "application/json",
+          HttpHeaders.authorizationHeader: "Bearer $accessToken",
+        },
+        body: body,
+      );
+    } catch (e) {
+      Fluttertoast.showToast(
+          msg: "An error has occurred, please contact the administrator");
+      return;
+    }
+  }
 }

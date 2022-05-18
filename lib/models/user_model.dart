@@ -1,3 +1,5 @@
+import 'package:sakayna/global/app.dart';
+
 class UserModel {
   final int id;
   final String firstName;
@@ -52,7 +54,8 @@ class UserModel {
             : DateTime.parse(json['birth_date'].toString()),
         address: json['address'],
         email: json['email'],
-        accountType: json['account_type'],
+        accountType:
+            json['account_type'] != "Admin" ? json['account_type'] : "1",
         licenseNumber: json['license_number'],
         mobileNumber: json['mobile_number'],
         isEmailVerified: int.parse(json['email_verified'].toString()) == 1,

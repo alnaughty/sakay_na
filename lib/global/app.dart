@@ -21,7 +21,7 @@ UserModel? loggedUser;
 Position? currentPosition;
 late StreamSubscription<Position?> positionStream;
 BookingDataModel? currentBooking;
-
+final RegExp numberRegexp = RegExp(r"/^\d+$/");
 // ignore: prefer_function_declarations_over_variables
 Route<dynamic>? Function(RouteSettings)? get routeSettings => (settings) {
       switch (settings.name) {
@@ -60,6 +60,7 @@ Route<dynamic>? Function(RouteSettings)? get routeSettings => (settings) {
           final List args = settings.arguments as List;
           final DestinationModel destination = args[0] as DestinationModel;
           final int driverId = args[1] as int;
+          print("DRIVER ID : $driverId");
           final CurrentBookingVm _curr = CurrentBookingVm.instance;
           return PageTransition(
             child: BookDriverPage(
